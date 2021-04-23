@@ -4,16 +4,6 @@
 		<title>Who would you be in 1932 Germany?</title>
 	</head>
 	
-	<script>
-		var socialAxis = 5;
-		var govtAxis = 5;
-		var econAxis = 5;
-		
-		sessionStorage.setItem("socialAxis", socialAxis);
-		sessionStorage.setItem("govtAxis", govtAxis);
-		sessionStorage.setItem("econAxis", econAxis);
-	</script>
-	
 	<body>
 		<h1>Who would you be in 1932 Germany?</h1>
 		<h3>Made by Seva Gaskov.</h3>
@@ -27,6 +17,14 @@
 	
 	<script>
 		function btnClicked(){
+			var socialAxis = 5;
+			var govtAxis = 5;
+			var econAxis = 5;
+		
+			sessionStorage.setItem("socialAxis", socialAxis);
+			sessionStorage.setItem("govtAxis", govtAxis);
+			sessionStorage.setItem("econAxis", econAxis);
+		
 			window.open("society.html", "_self");
 		}
 	</script>
