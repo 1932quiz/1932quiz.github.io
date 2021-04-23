@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Who would you be in 1932 Germany?</title>
+	</head>
+	
+	<script></script>
+	
+	<body>
+		<h1>Who would you be in 1932 Germany?</h1>
+		<h3>Made by Seva Gaskov.</h3>
+		
+		<hr>
+		
+		<h2>Section 2 – War</h2>
+		
+		<p>6. Germany did the right thing to surrender in the Great War.</p>
+		<input type="radio" id="q6_SA" name="q6" value="Strongly Agree">
+		<label for="q6_SA">Strongly Agree</label><br>
+		<input type="radio" id="q6_A" name="q6" value="Agree">
+		<label for="q6_A">Agree</label><br>
+		<input type="radio" id="q6_N" name="q6" value="Neutral" checked>
+		<label for="q6_N">Neutral</label><br>
+		<input type="radio" id="q6_D" name="q6" value="Disagree">
+		<label for="q6_D">Disagree</label><br>
+		<input type="radio" id="q6_SD" name="q6" value="Strongly Disagree">
+		<label for="q6_SD">Strongly Disagree</label><br>
+
+		<br>  
+
+		<p>7. Betrayal from the inside, rather than losses on the battlefield, caused Germany to lose the Great War.</p>
+		<input type="radio" id="q7_SA" name="q7" value="Strongly Agree">
+		<label for="q7_SA">Strongly Agree</label><br>
+		<input type="radio" id="q7_A" name="q7" value="Agree">
+		<label for="q7_A">Agree</label><br>
+		<input type="radio" id="q7_N" name="q7" value="Neutral" checked>
+		<label for="q7_N">Neutral</label><br>
+		<input type="radio" id="q7_D" name="q7" value="Disagree">
+		<label for="q7_D">Disagree</label><br>
+		<input type="radio" id="q7_SD" name="q7" value="Strongly Disagree">
+		<label for="q7_SD">Strongly Disagree</label><br>
+		
+		<br>  
+			
+		<p>8. Our country has the right to intervene and expand when it benefits our nation.</p>
+		<input type="radio" id="q8_SA" name="q8" value="Strongly Agree">
+		<label for="q8_SA">Strongly Agree</label><br>
+		<input type="radio" id="q8_A" name="q8" value="Agree">
+		<label for="q8_A">Agree</label><br>
+		<input type="radio" id="q8_N" name="q8" value="Neutral" checked>
+		<label for="q8_N">Neutral</label><br>
+		<input type="radio" id="q8_D" name="q8" value="Disagree">
+		<label for="q8_D">Disagree</label><br>
+		<input type="radio" id="q8_SD" name="q8" value="Strongly Disagree">
+		<label for="q8_SD">Strongly Disagree</label><br>
+		
+		<br>  
+			
+		<p>9. The terms of the Treaty of Versailles are outaregous and shouldn't be followed.</p>
+		<input type="radio" id="q9_SA" name="q9" value="Strongly Agree">
+		<label for="q9_SA">Strongly Agree</label><br>
+		<input type="radio" id="q9_A" name="q9" value="Agree">
+		<label for="q9_A">Agree</label><br>
+		<input type="radio" id="q9_N" name="q9" value="Neutral" checked>
+		<label for="q8_N">Neutral</label><br>
+		<input type="radio" id="q9_D" name="q9" value="Disagree">
+		<label for="q9_D">Disagree</label><br>
+		<input type="radio" id="q9_SD" name="q9" value="Strongly Disagree">
+		<label for="q9_SD">Strongly Disagree</label><br>
+		
+		<br>  
+			
+		<p>10. Our country should seek to prolong peace as best as it can.</p>
+		<input type="radio" id="q10_SA" name="q10" value="Strongly Agree">
+		<label for="q10_SA">Strongly Agree</label><br>
+		<input type="radio" id="q10_A" name="q10" value="Agree">
+		<label for="q10_A">Agree</label><br>
+		<input type="radio" id="q10_N" name="q10" value="Neutral" checked>
+		<label for="q10_N">Neutral</label><br>
+		<input type="radio" id="q10_D" name="q10" value="Disagree">
+		<label for="q10_D">Disagree</label><br>
+		<input type="radio" id="q10_SD" name="q10" value="Strongly Disagree">
+		<label for="q10_SD">Strongly Disagree</label><br>
+		
+		<br>
+		
+		<button onclick="btnClicked()" type="button">Go to the next section.</button>
+	</body>
+	
+	<script>
+		var socialAxis = parseFloat(sessionStorage.getItem("socialAxis"));
+		var govtAxis = parseFloat(sessionStorage.getItem("govtAxis"));
+		var econAxis = parseFloat(sessionStorage.getItem("econAxis"));
+		
+		function btnClicked(){
+			//q6 results
+			if(document.getElementById("q6_SA").checked) {
+				socialAxis -= 1;
+			}
+			else if(document.getElementById("q6_A").checked) {
+				socialAxis -= 0.5;
+			}
+			else if(document.getElementById("q6_D").checked) {
+				socialAxis += 0.5;
+			}
+			else if(document.getElementById("q6_SD").checked) {
+				socialAxis += 1;
+			}
+			
+			//q7 results
+			if(document.getElementById("q7_SA").checked) {
+				socialAxis += 1;
+			}
+			else if(document.getElementById("q7_A").checked) {
+				socialAxis += 0.5;
+			}
+			else if(document.getElementById("q7_D").checked) {
+				socialAxis -= 0.5;
+			}
+			else if(document.getElementById("q7_SD").checked) {
+				socialAxis -= 1;
+			}
+			
+			//q8 results
+			if(document.getElementById("q8_SA").checked) {
+				socialAxis += 1;
+				govtAxis += 1;
+			}
+			else if(document.getElementById("q8_A").checked) {
+				socialAxis += 0.5;
+			}
+			else if(document.getElementById("q8_D").checked) {
+				socialAxis -= 0.5;
+			}
+			else if(document.getElementById("q8_SD").checked) {
+				socialAxis -= 1;
+				govtAxis -= 1;
+			}
+			
+			//q9 results
+			if(document.getElementById("q9_SA").checked) {
+				socialAxis += 1;
+			}
+			else if(document.getElementById("q9_A").checked) {
+				socialAxis += 0.5;
+			}
+			else if(document.getElementById("q9_D").checked) {
+				socialAxis -= 0.5;
+			}
+			else if(document.getElementById("q9_SD").checked) {
+				socialAxis -= 1;
+			}
+			
+			//q10 results
+			if(document.getElementById("q10_SA").checked) {
+				socialAxis -= 1;
+				govtAxis -= 1;
+			}
+			else if(document.getElementById("q10_A").checked) {
+				socialAxis -= 0.5;
+			}
+			else if(document.getElementById("q10_D").checked) {
+				socialAxis += 0.5;
+			}
+			else if(document.getElementById("q10_SD").checked) {
+				socialAxis += 1;
+				govtAxis += 1;
+			}
+			
+			sessionStorage.setItem("socialAxis", socialAxis);
+			sessionStorage.setItem("govtAxis", govtAxis);
+			sessionStorage.setItem("econAxis", econAxis);
+			
+			window.open("economics.html", "_self");
+		}
+	</script>
+</html>

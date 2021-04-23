@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Who would you be in 1932 Germany?</title>
+	</head>
+	
+	<script></script>
+	
+	<body>
+		<h1>Who would you be in 1932 Germany?</h1>
+		<h3>Made by Seva Gaskov.</h3>
+		
+		<hr>
+		
+		<h2>Section 3 – Economics</h2>
+		
+		<p>11. Capitalism is a desirable economic system.</p>
+		<input type="radio" id="q11_SA" name="q11" value="Strongly Agree">
+		<label for="q11_SA">Strongly Agree</label><br>
+		<input type="radio" id="q11_A" name="q11" value="Agree">
+		<label for="q11_A">Agree</label><br>
+		<input type="radio" id="q11_N" name="q11" value="Neutral" checked>
+		<label for="q11_N">Neutral</label><br>
+		<input type="radio" id="q11_D" name="q11" value="Disagree">
+		<label for="q11_D">Disagree</label><br>
+		<input type="radio" id="q11_SD" name="q11" value="Strongly Disagree">
+		<label for="q11_SD">Strongly Disagree</label><br>
+
+		<br>  
+
+		<p>12. We should seek to emphasize economic equality.</p>
+		<input type="radio" id="q12_SA" name="q12" value="Strongly Agree">
+		<label for="q12_SA">Strongly Agree</label><br>
+		<input type="radio" id="q12_A" name="q12" value="Agree">
+		<label for="q12_A">Agree</label><br>
+		<input type="radio" id="q12_N" name="q12" value="Neutral" checked>
+		<label for="q12_N">Neutral</label><br>
+		<input type="radio" id="q12_D" name="q12" value="Disagree">
+		<label for="q12_D">Disagree</label><br>
+		<input type="radio" id="q12_SD" name="q12" value="Strongly Disagree">
+		<label for="q12_SD">Strongly Disagree</label><br>
+		
+		<br>  
+			
+		<p>13. Our main economic priority should be to achieve total economic self-reliance.</p>
+		<input type="radio" id="q13_SA" name="q13" value="Strongly Agree">
+		<label for="q13_SA">Strongly Agree</label><br>
+		<input type="radio" id="q13_A" name="q13" value="Agree">
+		<label for="q13_A">Agree</label><br>
+		<input type="radio" id="q13_N" name="q13" value="Neutral" checked>
+		<label for="q13_N">Neutral</label><br>
+		<input type="radio" id="q13_D" name="q13" value="Disagree">
+		<label for="q13_D">Disagree</label><br>
+		<input type="radio" id="q13_SD" name="q13" value="Strongly Disagree">
+		<label for="q13_SD">Strongly Disagree</label><br>
+		
+		<br>  
+			
+		<p>14. The main responsibility of a business should be to benefit our nation, not gain profit.</p>
+		<input type="radio" id="q14_SA" name="q14" value="Strongly Agree">
+		<label for="q14_SA">Strongly Agree</label><br>
+		<input type="radio" id="q14_A" name="q14" value="Agree">
+		<label for="q14_A">Agree</label><br>
+		<input type="radio" id="q14_N" name="q14" value="Neutral" checked>
+		<label for="q13_N">Neutral</label><br>
+		<input type="radio" id="q14_D" name="q14" value="Disagree">
+		<label for="q14_D">Disagree</label><br>
+		<input type="radio" id="q14_SD" name="q14" value="Strongly Disagree">
+		<label for="q14_SD">Strongly Disagree</label><br>
+		
+		<br>  
+			
+		<p>15. Free trade is mostly beneficial for our society.</p>
+		<input type="radio" id="q15_SA" name="q15" value="Strongly Agree">
+		<label for="q15_SA">Strongly Agree</label><br>
+		<input type="radio" id="q15_A" name="q15" value="Agree">
+		<label for="q15_A">Agree</label><br>
+		<input type="radio" id="q15_N" name="q15" value="Neutral" checked>
+		<label for="q15_N">Neutral</label><br>
+		<input type="radio" id="q15_D" name="q15" value="Disagree">
+		<label for="q15_D">Disagree</label><br>
+		<input type="radio" id="q15_SD" name="q15" value="Strongly Disagree">
+		<label for="q15_SD">Strongly Disagree</label><br>
+		
+		<br>
+		
+		<button onclick="btnClicked()" type="button">See where you stand!</button>
+	</body>
+	
+	<script>
+		var socialAxis = parseFloat(sessionStorage.getItem("socialAxis"));
+		var govtAxis = parseFloat(sessionStorage.getItem("govtAxis"));
+		var econAxis = parseFloat(sessionStorage.getItem("econAxis"));
+		
+		function btnClicked(){
+			//q11 results
+			if(document.getElementById("q11_SA").checked) {
+				econAxis += 2;
+				socialAxis += 1;
+			}
+			else if(document.getElementById("q11_A").checked) {
+				econAxis += 1;
+			}
+			else if(document.getElementById("q11_D").checked) {
+				econAxis -= 1;
+			}
+			else if(document.getElementById("q11_SD").checked) {
+				econAxis -= 2;
+				socialAxis -= 1;
+			}
+			
+			//q12 results
+			if(document.getElementById("q12_SA").checked) {
+				econAxis -= 1;
+				socialAxis -= 1;
+			}
+			else if(document.getElementById("q12_A").checked) {
+				econAxis -= 0.5;
+				socialAxis -= 0.5;
+			}
+			else if(document.getElementById("q12_D").checked) {
+				econAxis += 0.5;
+				socialAxis += 0.5;
+			}
+			else if(document.getElementById("q12_SD").checked) {
+				econAxis += 1;
+				socialAxis += 1;
+			}
+			
+			//q13 results
+			if(document.getElementById("q13_SA").checked) {
+				econAxis -= 0.5;
+				govtAxis += 1;
+				socialAxis += 1;
+			}
+			else if(document.getElementById("q13_A").checked) {
+				socialAxis -= 0.5;
+			}
+			else if(document.getElementById("q13_D").checked) {
+				socialAxis += 0.5;
+			}
+			else if(document.getElementById("q13_SD").checked) {
+				econAxis += 0.5;
+				govtAxis -= 1;
+				socialAxis -= 1;
+			}
+			
+			//q14 results
+			if(document.getElementById("q14_SA").checked) {
+				econAxis -= 0.5;
+				govtAxis += 1;
+				socialAxis += 1;
+			}
+			else if(document.getElementById("q14_A").checked) {
+				socialAxis -= 0.5;
+			}
+			else if(document.getElementById("q14_D").checked) {
+				socialAxis += 0.5;
+			}
+			else if(document.getElementById("q14_SD").checked) {
+				econAxis += 0.5;
+				govtAxis -= 1;
+				socialAxis -= 1;
+			}
+			
+			//q15 results
+			if(document.getElementById("q15_SA").checked) {
+				econAxis += 0.5;
+				govtAxis -= 1;
+				socialAxis -= 1;
+			}
+			else if(document.getElementById("q15_A").checked) {
+				socialAxis += 0.5;
+			}
+			else if(document.getElementById("q15_D").checked) {
+				socialAxis -= 0.5;
+			}
+			else if(document.getElementById("q15_SD").checked) {
+				econAxis -= 0.5;
+				govtAxis += 1;
+				socialAxis += 1;
+			}
+			
+			sessionStorage.setItem("socialAxis", socialAxis);
+			sessionStorage.setItem("govtAxis", govtAxis);
+			sessionStorage.setItem("econAxis", econAxis);
+			
+			window.open("result.html", "_self");
+		}
+	</script>
+</html>
