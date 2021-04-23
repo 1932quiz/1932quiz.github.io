@@ -109,20 +109,20 @@
 			
 			//q2 results
 			if(document.getElementById("q2_SA").checked) {
-				govtAxis += 1;
-				socialAxis += 1;
-			}
-			else if(document.getElementById("q2_A").checked) {
 				govtAxis += 0.5;
 				socialAxis += 0.5;
 			}
+			else if(document.getElementById("q2_A").checked) {
+				govtAxis += 0.25;
+				socialAxis += 0.25;
+			}
 			else if(document.getElementById("q2_D").checked) {
-				govtAxis -= 0.5;
-				socialAxis -= 0.5;
+				govtAxis -= 0.25;
+				socialAxis -= 0.25;
 			}
 			else if(document.getElementById("q2_SD").checked) {
-				govtAxis -= 1;
-				socialAxis -= 1;
+				govtAxis -= 0.5;
+				socialAxis -= 0.5;
 			}
 			
 			//q3 results
@@ -135,30 +135,30 @@
 				econAxis += 0.5;
 			}
 			else if(document.getElementById("q3_D").checked) {
-				socialAxis -= 1;
+				socialAxis -= 0.5;
 				econAxis -= 0.5;
 			}
 			else if(document.getElementById("q3_SD").checked) {
-				socialAxis -= 1.5;
-				econAxis -= 1;
+				socialAxis -= 1;
+				econAxis -= 0.5;
 			}
 			
 			//q4 results
 			if(document.getElementById("q4_SA").checked) {
+				govtAxis += 1.5;
+				socialAxis += 1.5;
+			}
+			else if(document.getElementById("q4_A").checked) {
 				govtAxis += 1;
 				socialAxis += 1;
 			}
-			else if(document.getElementById("q4_A").checked) {
-				govtAxis += 0.5;
-				socialAxis += 0.5;
-			}
 			else if(document.getElementById("q4_D").checked) {
-				govtAxis -= 0.5;
-				socialAxis -= 0.5;
-			}
-			else if(document.getElementById("q4_SD").checked) {
 				govtAxis -= 1;
 				socialAxis -= 1;
+			}
+			else if(document.getElementById("q4_SD").checked) {
+				govtAxis -= 1.5;
+				socialAxis -= 1.5;
 			}
 			
 			//q5 results
